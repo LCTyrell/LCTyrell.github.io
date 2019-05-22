@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Finding the best location for an Art Book Store in Paris : A geospatial data analysis"
 date:   2014-08-29 14:34:25
 categories: jekyll update
 tags: featured
