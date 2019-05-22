@@ -22,7 +22,7 @@ author_image: "/assets/images/author.jpg"
 
 paginate:	5
 
-url: "http://OldM0nk3y.github.io" # the base hostname & protocol for your site
+url: "http://" # the base hostname & protocol for your site
 baseurl: ""
 #used to display twitter cards
 twitter_handle: '*'
@@ -34,12 +34,12 @@ twitter_handle: '*'
 
 # social icons and sharing options
 social:
-  - icon:	twitter
-    url:	https://twitter.com/dirkfabisch
-    desc: Follow me on twitter
-    share_url: http://twitter.com/share
-    share_title: ?text=
-    share_link: "&amp;url="
+ # - icon:	twitter
+ #  url:	https://twitter.com/
+ #   desc: Follow me on twitter
+ #   share_url: http://twitter.com/share
+ #   share_title: ?text=
+ #   share_link: "&amp;url="
 
 #  - icon:	facebook
 #    url:	https://facebook.com/???
@@ -49,7 +49,7 @@ social:
 #    share_link: "&amp;u="
 
   - icon:	github
-    url:	https://github.com/dirkfabisch
+    url:	https://github.com/OldM0nk3y
     desc:	Fork me on github
     share_url:
     share_title:
