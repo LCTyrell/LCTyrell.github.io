@@ -4,7 +4,7 @@ gems:
   - jekyll-paginate
 
 # Site settings
-title: "Mediator"
+title: "oldM0nk3y"
 description: > # this means to ignore newlines until "email:"
    A Jekyll theme - Medium inspired
 
@@ -16,8 +16,8 @@ float_logo: true # true, false (default)
 # blog cover
 cover: "/assets/images/cA4aKEIPQrerBnp1yGHv_IMG_9534-3-2.jpg"
 
-name: 'Dirk Fabisch'
-author: 'Dirk Fabisch'
+name: 'OMK'
+author: 'OMK'
 author_image: "/assets/images/author.jpg"
 
 paginate:	5
