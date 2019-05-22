@@ -4,9 +4,9 @@ gems:
   - jekyll-paginate
 
 # Site settings
-title: "oldM0nk3y"
+title: "GEODS"
 description: > # this means to ignore newlines until "email:"
-   A Jekyll theme - Medium inspired
+   Geospatial | Artificial Intelligence | Anthropology
 
 email: a-mail@mail.mail
 #blog logo
@@ -25,7 +25,7 @@ paginate:	5
 url: "http://myblog.***.***" # the base hostname & protocol for your site
 baseurl: ""
 #used to display twitter cards
-twitter_handle: '@dirkfabisch'
+twitter_handle: '*'
 
 #fill in disqus shortname to use disqus
 #disqus: disqus-shortname
