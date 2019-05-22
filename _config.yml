@@ -6,7 +6,7 @@ gems:
 # Site settings
 title: "GEODS"
 description: > # this means to ignore newlines until "email:"
-   Geospatial | Artificial Intelligence | Anthropology
+   Geospatial Analysis | Artificial Intelligence | Anthropology
 
 email: a-mail@mail.mail
 #blog logo
