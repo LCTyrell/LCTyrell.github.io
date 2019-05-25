@@ -8,9 +8,9 @@ image: /assets/article_images/2014-08-29-welcome-to-jekyll/desktop.JPG
 ---
 Finding the best location for an Art Book Store in Paris: A geospatial data analysis
 
-Introduction
+# Introduction
 
-Background and business problem 
+## Background and business problem 
 
 Paris, «city of light», is a well known location for art lover’s. With more than 1,000 art gallery, many museum and exposition, she has becomed a famous place for  cultural tourism, attracting millions people from all over the world each year. The cultural offer is wide and numerous thanks to, in particular, the support of the ministry of culture. The market of art and derived products is likewase well devolopped and very attractive for professionals, investissor and enterprises. 
 
@@ -27,33 +27,23 @@ Finally, to facilitate the choice of the stakeholder, we will create cluster of 
 
 This study is representative of the first step in geomarketing analysis and would be the same for other kind of store by modifying the categories of venues selected.
 
-Data description
+## Data description
 
-    • I used Forsquare API to get the most common venues of given Borough of Istanbul [3]. 
+   * I used Forsquare API to get the most common venues of given Borough of Istanbul [3]. 
 
-
-
-
-
-
-
-
-
-
-
-    • The location store per square meter come from [4]. 
+   * The location store per square meter come from [4]. 
 
 
 Table 2 : Paris real estate price per borough
 
-    • The coordinates of each Borough come from. … format geojson[5]. 
+   * The coordinates of each Borough come from. … format geojson[5]. 
 
 Table 3 : Geometry data of Paris borough
 
 
-Methodology
+## Methodology
 
-    • Rent cost by number of venues
+### Rent cost by number of venues
 
 In a first time to represent the rent price per number of venues, we merged data of the borough geometry and the rent cost. And we create a map using the folium library to show the rent cost per borough :
 
@@ -68,7 +58,7 @@ To have a better global view we create a heatmap :
 
 Figure 3 : Heatmap of venues
 
-    • Correlation between rent price and venues
+### Correlation between rent price and venues
 
 To make correlation between rent price and venues we first use the library geopandas to make a spatial join between venues and geometry data. Then we merged the result with price data.
 So we could count the number of venues per borough, and prepare a dataframe to realize the repgression analysis :
