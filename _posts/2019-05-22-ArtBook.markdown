@@ -6,34 +6,76 @@ categories: jekyll update
 tags: 
 image: /assets/article_images/2014-08-29-welcome-to-jekyll/desktop.JPG
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve --watch`, which launches a web server and auto-regenerates your site when a file is updated.
+Finding the best location for an Art Book Store in Paris: A geospatial data analysis
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+Introduction
 
-Jekyll also offers powerful support for code snippets:
+Background and business problem 
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+Paris, «city of light», is a well known location for art lover’s. With more than 1,000 art gallery, many museum and exposition, she has becomed a famous place for  cultural tourism, attracting millions people from all over the world each year. The cultural offer is wide and numerous thanks to, in particular, the support of the ministry of culture. The market of art and derived products is likewase well devolopped and very attractive for professionals, investissor and enterprises. 
 
-Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll’s dedicated Help repository][jekyll-help].
+We are going to realize a study for an artbook store chain who want to install a shop in French capital. The analysis will consist of a first approach to find a selection of the best potantial borough on which more advanced investigation will be processed later.
 
-{% highlight js %}
+To find the best location for an artbook store we identify three major business requierement :
+    • As all big city, Paris is an expensive place, so we have to take into account the store rent costs by borough.
+    • The attractivness of the borough, with the number of art-culture and store venues.
+    • The accessibility, with the transports venues.
 
-<footer class="site-footer">
- <a class="subscribe" href="{{ "/feed.xml" | prepend: site.baseurl }}"> <span class="tooltip"> <i class="fa fa-rss"></i> Subscribe!</span></a>
-  <div class="inner">a
-   <section class="copyright">All content copyright <a href="mailto:{{ site.email}}">{{ site.name }}</a> &copy; {{ site.time | date: '%Y' }} &bull; All rights reserved.</section>
-   <section class="poweredby">Made with <a href="http://jekyllrb.com"> Jekyll</a></section>
-  </div>
-</footer>
-{% endhighlight %}
+For this purpose, firstly, we will create a density map of all venues (culture, store and transport) to locate the best places and well deserved borough.
+Secondly we will study the correlation between rent price and number of venues, using for this purpose regression analysis. We will also make a histogram to compare borough by categories of venues and rent price variation.
+Finally, to facilitate the choice of the stakeholder, we will create cluster of different type of borough in fonction of the most common venues.
+
+This study is representative of the first step in geomarketing analysis and would be the same for other kind of store by modifying the categories of venues selected.
+
+Data description
+
+    • I used Forsquare API to get the most common venues of given Borough of Istanbul [3]. 
 
 
-[jekyll]:      http://jekyllrb.com
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-help]: https://github.com/jekyll/jekyll-help
+
+
+
+
+
+
+
+
+
+    • The location store per square meter come from [4]. 
+
+
+Table 2 : Paris real estate price per borough
+
+    • The coordinates of each Borough come from. … format geojson[5]. 
+
+Table 3 : Geometry data of Paris borough
+
+
+Methodology
+
+    • Rent cost by number of venues
+
+In a first time to represent the rent price per number of venues, we merged data of the borough geometry and the rent cost. And we create a map using the folium library to show the rent cost per borough :
+
+Figure 1: Average store rent price per square meter per year in Paris
+
+Then we use the foursquare API to get the data on culture, store and transport venues categories. And we put it on the map to have a fisrt understanding of the relation between rent price and the number of venues:
+
+Figure 2 : Map of Venues get from Foursquare API
+
+Due to the Foursquare free account limitation we have a limited number of venues (150) distributed on the map accross the borough.
+To have a better global view we create a heatmap :
+
+Figure 3 : Heatmap of venues
+
+    • Correlation between rent price and venues
+
+To make correlation between rent price and venues we first use the library geopandas to make a spatial join between venues and geometry data. Then we merged the result with price data.
+So we could count the number of venues per borough, and prepare a dataframe to realize the repgression analysis :
+
+
+
+
+We use the library Seaborn to create the plot of linear regression and the residual plot to test the linearity correlation :
+
+
