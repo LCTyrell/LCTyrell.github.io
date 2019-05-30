@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Finding the best location for an Art Book Store in Paris : A geospatial data analysis"
-date:   2019-08-29 14:34:25
+date:   2014-08-29 14:34:25
 categories: jekyll update
 tags: 
 image: /assets/article_images/2014-08-29-welcome-to-jekyll/desktop.JPG
