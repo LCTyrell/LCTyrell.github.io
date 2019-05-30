@@ -33,13 +33,13 @@ For this study, we will use free data from different website and service, in dif
 * A free account on Foursquare API [1] to get culture, store and transport venues of borough of Paris.  This free account have restriction on the number of venue we could request in a limited time. The request result are in geojson format.
 
 <p align="center">
-<img src="/assets/article_images/2018-05-25-art_bookstore/DF_rentPrice.jpg"><br/>  
+<img src="/assets/article_images/2018-05-25-art_bookstore/DF_venues.jpg"><br/>  
 <small>Table 1 : Selected venues of Paris</small>
 </p>
 
 * The geometry of each borough come from open data Paris [2]. We downloaded the shape format. 
 <p align="center">
-<img src="/assets/article_images/2018-05-25-art_bookstore/DF_rentPrice.jpg"><br/>  
+<img src="/assets/article_images/2018-05-25-art_bookstore/DF_geom.jpg"><br/>  
 <small>Table 2 : Geometry data of Paris borough</small>
 </p>
 
@@ -56,13 +56,13 @@ For this study, we will use free data from different website and service, in dif
 
 In a first time to represent the rent price per number of venues, we merged data of the borough geometry and the rent cost. And we create a map using the folium library to show the rent cost per borough :
 <p align="center">
-<img src="/assets/article_images/2018-05-25-art_bookstore/DF_rentPrice.jpg"><br/>  
+<img src="/assets/article_images/2018-05-25-art_bookstore/Map_rentCost.jpg"><br/>  
 <small>Figure 1: Average store rent price per square meter per year in Paris</small>
 </p>
 
 Then we use the foursquare API to get the data on culture, store and transport venues categories. And we put them on the map to have a fisrt understanding of the relation between rent price and the number of venues:
 <p align="center">
-<img src="/assets/article_images/2018-05-25-art_bookstore/DF_rentPrice.jpg"><br/>  
+<img src="/assets/article_images/2018-05-25-art_bookstore/Map_venues_rentCost.jpg"><br/>  
 <small>Figure 2 : Map of Venues get from Foursquare API</small>
 </p>
 
@@ -75,17 +75,17 @@ To make correlation between rent price and venues we first use the library geopa
 So we could count the number of venues per borough, and prepare a dataframe to realize the repgression analysis :
 
 <p align="center">
-<img src="/assets/article_images/2018-05-25-art_bookstore/DF_rentPrice.jpg"><br/>  
+<img src="/assets/article_images/2018-05-25-art_bookstore/DF_regression.jpg"><br/>  
 <small>Table 4 : Number of venues and rent price per borough</small>
 </p>
 
 We use the library Seaborn to create the plot of linear regression and the residual plot to test the linearity correlation :
 <p align="center">
-<img src="/assets/article_images/2018-05-25-art_bookstore/DF_rentPrice.jpg"><br/>  
+<img src="/assets/article_images/2018-05-25-art_bookstore/residualPlot.jpg"><br/>  
 <small>Figure 3 : Residual plot of venues per rent price</small>
 </p>
 <p align="center">
-<img src="/assets/article_images/2018-05-25-art_bookstore/DF_rentPrice.jpg"><br/>  
+<img src="/assets/article_images/2018-05-25-art_bookstore/RegPlot.jpg"><br/>  
 <small>Figure 4 : Plot of linear regression of venues per rent price</small>
 </p>
 
@@ -99,19 +99,19 @@ Let’s take a look at the different venues per borough and their relation with 
 We first group the number of venues by type and borough :
 
 <p align="center">
-<img src="/assets/article_images/2018-05-25-art_bookstore/DF_rentPrice.jpg"><br/>  
+<img src="/assets/article_images/2018-05-25-art_bookstore/DF_catVenues.jpg"><br/>  
 <small>Table 5 : Number of venues per borough and type</small>
 </p>
 
 And then create an histogram with pyplot :
 <p align="center">
-<img src="/assets/article_images/2018-05-25-art_bookstore/DF_rentPrice.jpg"><br/>  
+<img src="/assets/article_images/2018-05-25-art_bookstore/Histo.jpg"><br/>  
 <small>Figure 5 : Number of venues per categories and rent price</small>
 </p>
 Here we can see two things: first, we see that the outliers lack data  (borough 4 and 6). Making a zoom on folium map and openstreetmap data we could verify the presence of metro access in this borough. A quick search on google let us find many outdoor bookstore venues on this borough :
 
 <p align="center">
-<img src="/assets/article_images/2018-05-25-art_bookstore/DF_rentPrice.jpg"><br/>  
+<img src="/assets/article_images/2018-05-25-art_bookstore/bouquinistes.jpg"><br/>  
 <small>Figure 6 : Map of open-air bookstore</small>
 </p>
 
@@ -121,23 +121,24 @@ Secondly, correlation between rent price and number of venues seems pretty good.
 * Cluster of boroughs
 We have 20 borough with different venues of culture, store and transport. Let’s try to group them to simplify the presenttion and the choice of the stakeholder. For that we used the kmeans clustering algorithm. :
 <p align="center">
-<img src="/assets/article_images/2018-05-25-art_bookstore/DF_rentPrice.jpg"><br/>  
+<img src="/assets/article_images/2018-05-25-art_bookstore/mostComVenues.jpg"><br/>  
 <small>Table 6 : Most common venues per borough</small>
 </p>
 
 We selected 5 clusters. Parts of them are consequence of lack of data. The darkest red cluster are the best borough candidate with the more cultural and store venues. The second darkest could be selected if needed. More residential he have some cultural venues that could be exploited. Other cluster are less intersting and could be grouped.
 <p align="center">
-<img src="/assets/article_images/2018-05-25-art_bookstore/DF_rentPrice.jpg"><br/>  
+<img src="/assets/article_images/2018-05-25-art_bookstore/Map_clusters.jpg"><br/>  
 <small>Figure 7 : Map of cluster</small>
 </p>
-Results
+
+## Results
 
 <p align="center">
-<img src="/assets/article_images/2018-05-25-art_bookstore/DF_rentPrice.jpg"><br/>  
+<img src="/assets/article_images/2018-05-25-art_bookstore/Map_HeatMap.jpg"><br/>  
 <small>Figure 8 : Heatmap of venues</small>
 </p>
 <p align="center">
-<img src="/assets/article_images/2018-05-25-art_bookstore/DF_rentPrice.jpg"><br/>  
+<img src="/assets/article_images/2018-05-25-art_bookstore/DF_costPerVenues.jpg"><br/>  
 <small>Table 7 : Rent cost per venues</small>
 </p>
  
