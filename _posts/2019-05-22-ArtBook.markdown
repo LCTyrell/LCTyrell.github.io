@@ -49,7 +49,7 @@ Table 3 : Geometry data of Paris borough
 
 ### Methodology
 <br/> 
-##### Rent cost by number of venues
+##### Rent cost by number of venues!
 <br/> 
 In a first time to represent the rent price per number of venues, we merged data of the borough geometry and the rent cost. And we create a map using the folium library to show the rent cost per borough :
 
