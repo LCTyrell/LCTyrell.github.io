@@ -11,7 +11,7 @@ Finding the best location for an Art Book Store in Paris: A geospatial data anal
 # Introduction
 <br/>
 ### Background and business problem   
-<br/>  
+ 
 Paris, «city of light», is a well known location for art lover’s. With more than 1,000 art gallery, many museum and exposition, she has becomed a famous place for  cultural tourism, attracting millions people from all over the world each year. The cultural offer is wide and numerous thanks to, in particular, the support of the ministry of culture. The market of art and derived products is likewase well devolopped and very attractive for professionals, investissor and enterprises. 
 
 We are going to realize a study for an artbook store chain who want to install a shop in French capital. The analysis will consist of a first approach to find a selection of the best potantial borough on which more advanced investigation will be processed later.
@@ -64,7 +64,7 @@ To have a better global view we create a heatmap :
 
 Figure 3 : Heatmap of venues
 
-* Correlation between rent price and venues *
+*Correlation between rent price and venues*
 <br/> 
 To make correlation between rent price and venues we first use the library geopandas to make a spatial join between venues and geometry data. Then we merged the result with price data.
 So we could count the number of venues per borough, and prepare a dataframe to realize the repgression analysis :
