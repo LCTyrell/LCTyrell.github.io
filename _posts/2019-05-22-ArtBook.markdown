@@ -32,7 +32,6 @@ This study is representative of the first step in geomarketing analysis and woul
    * I used Forsquare API to get the most common venues of given Borough of Istanbul [3]. 
 
    * The location store per square meter come from [4].
-<br/>
 <p align="center">
 <img src="/assets/article_images/2018-05-25-art_bookstore/DF_rentPrice.jpg"><br/>  
 <small>Table 2 : Paris real estate price per borough</small>
