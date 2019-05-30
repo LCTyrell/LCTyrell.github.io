@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Finding the best location for an Art Book Store in Paris : A geospatial data analysis"
-date:   2014-08-29 14:34:25
+date:   2019-08-29 14:34:25
 categories: jekyll update
 tags: 
 image: /assets/article_images/2014-08-29-welcome-to-jekyll/desktop.JPG
@@ -10,7 +10,7 @@ Finding the best location for an Art Book Store in Paris: A geospatial data anal
 
 # Introduction
 
-## Background and business problem 
+## Background and business problem   
 
 Paris, «city of light», is a well known location for art lover’s. With more than 1,000 art gallery, many museum and exposition, she has becomed a famous place for  cultural tourism, attracting millions people from all over the world each year. The cultural offer is wide and numerous thanks to, in particular, the support of the ministry of culture. The market of art and derived products is likewase well devolopped and very attractive for professionals, investissor and enterprises. 
 
@@ -32,7 +32,7 @@ This study is representative of the first step in geomarketing analysis and woul
    * I used Forsquare API to get the most common venues of given Borough of Istanbul [3]. 
 
    * The location store per square meter come from [4]. 
-
+![A test image](/assets/images/df_logo.jpg)
 
 Table 2 : Paris real estate price per borough
 
