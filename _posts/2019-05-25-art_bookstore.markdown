@@ -1,3 +1,13 @@
+---
+layout: post
+title:  "Finding the best location for an Art Book Store in Paris : A geospatial data analysis"
+date:   2015-05-25 14:00:00
+categories: jekyll update
+tags: 
+image: 
+---
+
+
 # Finding the best location for an Art Book Store in Paris: A geospatial data analysis
 
 ## Introduction
@@ -22,20 +32,29 @@ Data description
 
 For this study, we will use free data from different website and service, in differnt format :
 
-    • A free account on Foursquare API [1] to get culture, store and transport venues of borough of Paris.  This free account have restriction on the number of venue we could request in a limited time. The request result are in geojson format.
+* A free account on Foursquare API [1] to get culture, store and transport venues of borough of Paris.  This free account have restriction on the number of venue we could request in a limited time. The request result are in geojson format.
 
-
+<p align="center">
+<img src="/assets/article_images/2018-05-25-art_bookstore/DF_rentPrice.jpg"><br/>  
+<small>Table 2 : Paris real estate price per borough</small>
+</p>
 Table 1 : Selected venues of Paris
 
 
-    • The geometry of each borough come from open data Paris [2]. We downloaded the shape format. 
-
+* The geometry of each borough come from open data Paris [2]. We downloaded the shape format. 
+<p align="center">
+<img src="/assets/article_images/2018-05-25-art_bookstore/DF_rentPrice.jpg"><br/>  
+<small>Table 2 : Paris real estate price per borough</small>
+</p>
 Table 2 : Geometry data of Paris borough
 
 
-    • The location store per square meter come from localcommercial.net [3], in csv format. 
+* The location store per square meter come from localcommercial.net [3], in csv format. 
 
-
+<p align="center">
+<img src="/assets/article_images/2018-05-25-art_bookstore/DF_rentPrice.jpg"><br/>  
+<small>Table 2 : Paris real estate price per borough</small>
+</p>
     • Table 3 : Paris real estate price per borough
 
 
@@ -46,92 +65,111 @@ Table 2 : Geometry data of Paris borough
 
 Methodology
 
-    • Rent cost by number of venues
+* Rent cost by number of venues
 
 In a first time to represent the rent price per number of venues, we merged data of the borough geometry and the rent cost. And we create a map using the folium library to show the rent cost per borough :
-
+<p align="center">
+<img src="/assets/article_images/2018-05-25-art_bookstore/DF_rentPrice.jpg"><br/>  
+<small>Table 2 : Paris real estate price per borough</small>
+</p>
 Figure 1: Average store rent price per square meter per year in Paris
 
 Then we use the foursquare API to get the data on culture, store and transport venues categories. And we put them on the map to have a fisrt understanding of the relation between rent price and the number of venues:
-
+<p align="center">
+<img src="/assets/article_images/2018-05-25-art_bookstore/DF_rentPrice.jpg"><br/>  
+<small>Table 2 : Paris real estate price per borough</small>
+</p>
 Figure 2 : Map of Venues get from Foursquare API
 
 Due to the Foursquare free account limitation we have a limited number of venues (150) distributed on the map accross the borough. It seems to have a correlation between number of venues and rent price, but at first look it’s not very clear. let's try to verify this impression.
 
 
-    • Correlation between rent price and number of venues
+* Correlation between rent price and number of venues
 
 To make correlation between rent price and venues we first use the library geopandas to make a spatial join between venues and geometry data. Then we merged the result with price data.
 So we could count the number of venues per borough, and prepare a dataframe to realize the repgression analysis :
 
-
+<p align="center">
+<img src="/assets/article_images/2018-05-25-art_bookstore/DF_rentPrice.jpg"><br/>  
+<small>Table 2 : Paris real estate price per borough</small>
+</p>
 Table 4 : Number of venues and rent price per borough
 
 
 
 We use the library Seaborn to create the plot of linear regression and the residual plot to test the linearity correlation :
+<p align="center">
+<img src="/assets/article_images/2018-05-25-art_bookstore/DF_rentPrice.jpg"><br/>  
+<small>Table 2 : Paris real estate price per borough</small>
+</p>
 Figure 3 : Residual plot of venues per rent price
+<p align="center">
+<img src="/assets/article_images/2018-05-25-art_bookstore/DF_rentPrice.jpg"><br/>  
+<small>Table 2 : Paris real estate price per borough</small>
+</p>
 Figure 4 : Plot of linear regression of venues per rent price
 
 It seems we have a relatively good correlation (with a variability around ± 150 €), if we make abstraction of two points. This two outliers (corresponding to borough 4 and 6), cercled in red on the figures, are very interresting as they could indicate overpriced borough. But before making conclusion we must go further on investigating different venues.
 
 
-    • Attractiveness of borrough
+* Attractiveness of borrough
 
 Let’s take a look at the different venues per borough and their relation with rent cost using a histogram.
 
 We first group the number of venues by type and borough :
 
-
-
-
-
-
-
-
-
+<p align="center">
+<img src="/assets/article_images/2018-05-25-art_bookstore/DF_rentPrice.jpg"><br/>  
+<small>Table 2 : Paris real estate price per borough</small>
+</p>
 Table 5 : Number of venues per borough and type
 
-
-
-
 And then create an histogram with pyplot :
-
+<p align="center">
+<img src="/assets/article_images/2018-05-25-art_bookstore/DF_rentPrice.jpg"><br/>  
+<small>Table 2 : Paris real estate price per borough</small>
+</p>
 Figure 5 : Number of venues per categories and rent price
 Here we can see two things: first, we see that the outliers lack data  (borough 4 and 6). Making a zoom on folium map and openstreetmap data we could verify the presence of metro access in this borough. A quick search on google let us find many outdoor bookstore venues on this borough :
 
-
-
-
-
-
-
-
-
-
-
+<p align="center">
+<img src="/assets/article_images/2018-05-25-art_bookstore/DF_rentPrice.jpg"><br/>  
+<small>Table 2 : Paris real estate price per borough</small>
+</p>
 Figure 6 : Map of open-air bookstore
 
 So we have confirmation of a lack of venues on this places.
 Secondly, correlation between rent price and number of venues seems pretty good. Not supprisingly, many borough of the center are overpriced (borough 2 to 6, with respect of lack of data du to foursquare free account limitation).
 
-    • Cluster of boroughs
+* Cluster of boroughs
 We have 20 borough with different venues of culture, store and transport. Let’s try to group them to simplify the presenttion and the choice of the stakeholder. For that we used the kmeans clustering algorithm. :
-
+<p align="center">
+<img src="/assets/article_images/2018-05-25-art_bookstore/DF_rentPrice.jpg"><br/>  
+<small>Table 2 : Paris real estate price per borough</small>
+</p>
 Table 6 : Most common venues per borough
 
 We selected 5 clusters. Parts of them are consequence of lack of data. The darkest red cluster are the best borough candidate with the more cultural and store venues. The second darkest could be selected if needed. More residential he have some cultural venues that could be exploited. Other cluster are less intersting and could be grouped.
-
+<p align="center">
+<img src="/assets/article_images/2018-05-25-art_bookstore/DF_rentPrice.jpg"><br/>  
+<small>Table 2 : Paris real estate price per borough</small>
+</p>
 Figure 7 : Map of cluster
 Results
 
-
+<p align="center">
+<img src="/assets/article_images/2018-05-25-art_bookstore/DF_rentPrice.jpg"><br/>  
+<small>Table 2 : Paris real estate price per borough</small>
+</p>
 Figure 8 : Heatmap of venues
-
+<p align="center">
+<img src="/assets/article_images/2018-05-25-art_bookstore/DF_rentPrice.jpg"><br/>  
+<small>Table 2 : Paris real estate price per borough</small>
+</p>
  Table 7 : Rent cost per venues
 
  
-Discussion
+## Discussion
 
 The results seem realistic, but in fact the study must be reworked.
 
@@ -139,13 +177,13 @@ As we have noted several times, the limitation of Foursquare free account data w
 
 In addition, many other analyzes could have been carried out. For example : study of different categories of sites and their density, more precise selection of different sites in each category.  
 
-Conclusion
+## Conclusion
 
 We give stakeholders a better understanding of the borough's attractiveness, depending on the sites, for the potential client of an art bookstore. We also show the place more or less interesting in terms of cost per venues.
 
 That’s a good start point to make a decision, select the best borough on wich to make more investigations.
 
-References:
+## References:
 
     • [1] Istanbul — Wikipedia 
     • [2] Second-level Administrative Divisions of the Turkey 
