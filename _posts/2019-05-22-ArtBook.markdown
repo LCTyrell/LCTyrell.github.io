@@ -34,8 +34,8 @@ This study is representative of the first step in geomarketing analysis and woul
    * The location store per square meter come from [4].
 <br/>
 <p align="center">
-<img src="/assets/article_images/2018-05-25-art_bookstore/DF_rentPrice.jpg">  
-Table 2 : Paris real estate price per borough
+<img src="/assets/article_images/2018-05-25-art_bookstore/DF_rentPrice.jpg"><br/>  
+<h1 style="font-size:70%;" color='gray'>Table 2 : Paris real estate price per borough</h1>
 </p>
    * The coordinates of each Borough come from. … format geojson[5]. 
 
