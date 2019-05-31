@@ -17,9 +17,9 @@ Paris, «city of light», is a well known location for art lover’s. With more 
 We are going to realize a study for an artbook store chain who want to install a shop in French capital. The analysis will consist of a first approach to find a selection of the best potantial borough on which more advanced investigation will be processed later.
 
 To find the best location for an artbook store we identify three major business requierement :
-    • As all big city, Paris is an expensive place, so we have to take into account the store rent costs by borough.
-    • The attractivness of the borough, with the number of art-culture and store venues.
-    • The accessibility, with the transports venues.
+* As all big city, Paris is an expensive place, so we have to take into account the store rent costs by borough.
+* The attractivness of the borough, with the number of art-culture and store venues.
+* The accessibility, with the transports venues.
 
 For this purpose, firstly, we will create a density map of all venues (culture, store and transport) to locate the best places and well deserved borough.
 Secondly we will study the correlation between rent price and number of venues, using for this purpose regression analysis. We will also make a histogram to compare borough by categories of venues and rent price variation.
@@ -53,7 +53,7 @@ For this study, we will use free data from different websites and services, in d
 
 ## Methodology
 <br/>
-* Rent cost by number of venues
+### Rent cost by number of venues
 
 In a first time to represent the rent price per number of venues, we merged data of the borough geometry and the rent cost. And we create a map using the folium library to show the rent cost per borough :
 <p align="center">
@@ -70,7 +70,7 @@ Then we use the foursquare API to get the data on culture, store and transport v
 Due to the Foursquare free account limitation we have a limited number of venues (150) distributed on the map accross the borough. It seems to have a correlation between number of venues and rent price, but at first look it’s not very clear. let's try to verify this impression.
 
 
-* Correlation between rent price and number of venues
+### Correlation between rent price and number of venues
 
 To make correlation between rent price and venues we first use the library geopandas to make a spatial join between venues and geometry data. Then we merged the result with price data.
 So we could count the number of venues per borough, and prepare a dataframe to realize the repgression analysis :
@@ -93,7 +93,7 @@ We use the library Seaborn to create the plot of linear regression and the resid
 It seems we have a relatively good correlation (with a variability around ± 150 €), if we make abstraction of two points. This two outliers (corresponding to borough 4 and 6), cercled in red on the figures, are very interresting as they could indicate overpriced borough. But before making conclusion we must go further on investigating different venues.
 
 
-* Attractiveness of borrough
+### Attractiveness of borrough
 
 Let’s take a look at the different venues per borough and their relation with rent cost using a histogram.
 
@@ -119,7 +119,8 @@ Here we can see two things: first, we see that the outliers lack data  (borough 
 So we have confirmation of a lack of venues on this places.
 Secondly, correlation between rent price and number of venues seems pretty good. Not supprisingly, many borough of the center are overpriced (borough 2 to 6, with respect of lack of data du to foursquare free account limitation).
 
-* Cluster of boroughs
+### Cluster of boroughs
+
 We have 20 borough with different venues of culture, store and transport. Let’s try to group them to simplify the presenttion and the choice of the stakeholder. For that we used the kmeans clustering algorithm. :
 <p align="center">
 <img src="/assets/article_images/2018-05-25-art_bookstore/mostComVenues.jpg"><br/>  
@@ -159,8 +160,8 @@ That’s a good start point to make a decision, select the best borough on wich 
 
 ## References:
 <br/>
-* [1] Istanbul — Wikipedia 
-* [2] Second-level Administrative Divisions of the Turkey 
-* [3] Forsquare API 
+* [1] Foursquare API 
+* [2] open data Paris 
+* [3] localcommercial.netI 
 
 
