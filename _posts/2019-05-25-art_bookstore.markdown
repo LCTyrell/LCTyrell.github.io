@@ -140,7 +140,7 @@ This map gives, more precisely, the best location, the best borough of Paris. It
 <br/>
 <p align="center">
 <img src="/assets/article_images/2018-05-25-art_bookstore/Map_HeatMap.jpg"><br/>  
-<small>Figure 8 : Heatmap of venues</small>
+<small>Figure 8 : Heatmap of venues</small>  
  <br/>
  We find that the number of venues and the price are correlated. We also do cluster to highlight the most attractive borough based on the most common categories of venues. With this results we can study the cost per venue of of the most interesting borough group. 
 
