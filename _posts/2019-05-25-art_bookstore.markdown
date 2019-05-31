@@ -117,17 +117,17 @@ Here we can see two things: first, we see that the outliers lack data  (borough 
 </p>
 
 So we have confirmation of a lack of venues on this places.
-Secondly, correlation between rent price and number of venues seems pretty good. Not supprisingly, many borough of the center are overpriced (borough 2 to 6, with respect of lack of data du to foursquare free account limitation).
+Secondly, correlation between rent price and number of venues seems pretty good. Not surprisingly, many of the boroughs in the center are too expensive (districts 2 to 6, taking into account the lack of data due to the limitation of the free foursquare account).
 
 ### Cluster of boroughs
 
-We have 20 borough with different venues of culture, store and transport. Let’s try to group them to simplify the presenttion and the choice of the stakeholder. For that we used the kmeans clustering algorithm. :
+We have 20 borough with different venues of culture, store and transport. Let’s try to group them to simplify the presenttion and the choice of the stakeholder. For this we used the algorithm k-means clustering :
 <p align="center">
 <img src="/assets/article_images/2018-05-25-art_bookstore/mostComVenues.jpg"><br/>  
 <small>Table 6 : Most common venues per borough</small>
 </p>
 
-We selected 5 clusters. Parts of them are consequence of lack of data. The darkest red cluster are the best borough candidate with the more cultural and store venues. The second darkest could be selected if needed. More residential he have some cultural venues that could be exploited. Other cluster are less intersting and could be grouped.
+We selected 5 clusters. Some of them are the consequence of a lack of data. The darkest red group is the borough's best candidate with the most cultural venues and shops. The second darker could be selected if necessary. More residential, it has cultural places that can be exploited. The other groups are less interesting and could be grouped together.
 <p align="center">
 <img src="/assets/article_images/2018-05-25-art_bookstore/Map_clusters.jpg"><br/>  
 <small>Figure 7 : Map of cluster</small>
