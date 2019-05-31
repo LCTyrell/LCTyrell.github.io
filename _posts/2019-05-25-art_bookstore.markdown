@@ -8,9 +8,10 @@ image:
 ---
 
 
-## Introduction  
+## Introduction 
+<br/>
 ### Background and business problem  
-
+<br/>
 Paris, «city of light», is a well known location for art lover’s. With more than 1,000 art gallery, many museum and exposition, she has becomed a famous place for  cultural tourism, attracting millions people from all over the world each year. The cultural offer is wide and numerous thanks to, in particular, the support of the ministry of culture. The market of art and derived products is likewase well devolopped and very attractive for professionals, investissor and enterprises. 
 
 We are going to realize a study for an artbook store chain who want to install a shop in French capital. The analysis will consist of a first approach to find a selection of the best potantial borough on which more advanced investigation will be processed later.
@@ -27,8 +28,8 @@ Finally, to facilitate the choice of the stakeholder, we will create cluster of 
 This study is representative of the first step in geomarketing analysis and would be the same for other kind of store by modifying the categories of venues selected.
 
 ### Data description  
-
-For this study, we will use free data from different website and service, in differnt format :
+<br/>
+For this study, we will use free data from different websites and services, in different formats:
 
 * A free account on Foursquare API [1] to get culture, store and transport venues of borough of Paris.  This free account have restriction on the number of venue we could request in a limited time. The request result are in geojson format.
 
@@ -51,7 +52,7 @@ For this study, we will use free data from different website and service, in dif
 </p>
 
 ## Methodology
-
+<br/>
 * Rent cost by number of venues
 
 In a first time to represent the rent price per number of venues, we merged data of the borough geometry and the rent cost. And we create a map using the folium library to show the rent cost per borough :
@@ -132,7 +133,7 @@ We selected 5 clusters. Parts of them are consequence of lack of data. The darke
 </p>
 
 ## Results
-
+<br/>
 <p align="center">
 <img src="/assets/article_images/2018-05-25-art_bookstore/Map_HeatMap.jpg"><br/>  
 <small>Figure 8 : Heatmap of venues</small>
@@ -143,7 +144,7 @@ We selected 5 clusters. Parts of them are consequence of lack of data. The darke
 </p>
  
 ## Discussion
-
+<br/>
 The results seem realistic, but in fact the study must be reworked.
 
 As we have noted several times, the limitation of Foursquare free account data was a significant bias in the result we give ; even if the result seems close to what we would have reasonably expected. 
@@ -151,13 +152,13 @@ As we have noted several times, the limitation of Foursquare free account data w
 In addition, many other analyzes could have been carried out. For example : study of different categories of sites and their density, more precise selection of different sites in each category.  
 
 ## Conclusion
-
+<br/>
 We give stakeholders a better understanding of the borough's attractiveness, depending on the sites, for the potential client of an art bookstore. We also show the place more or less interesting in terms of cost per venues.
 
 That’s a good start point to make a decision, select the best borough on wich to make more investigations.
 
 ## References:
-
+<br/>
 * [1] Istanbul — Wikipedia 
 * [2] Second-level Administrative Divisions of the Turkey 
 * [3] Forsquare API 
